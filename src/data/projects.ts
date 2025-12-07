@@ -1,3 +1,5 @@
+import esimImage from "../assets/esim.png";
+
 export interface Project {
   title: string;
   description: string;
@@ -33,7 +35,7 @@ export const projects: Project[] = [
     title: "eSIM",
     description:
       "A modern eSIM storefront enabling users to purchase, activate, and manage digital SIM plans effortlessly",
-    image: "../assets/esim.png",
+    image: esimImage,
     liveUrl: "https://esim.mobitti.com/esim/",
     technologies: ["React JS", "Tailwind", "Axios"],
     period: "2025-Present",
