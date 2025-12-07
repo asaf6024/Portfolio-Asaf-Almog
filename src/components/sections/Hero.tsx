@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import asafPhoto from '@/assets/asaf-photo.png';
 
 const highlights = [
-  { icon: Briefcase, title: '3 Years of', subtitle: 'Experience' },
+  { icon: Briefcase, title: '4 Years of', subtitle: 'Experience' },
   { icon: BookOpen, title: 'Great', subtitle: 'Self-Learning' },
   { icon: Users, title: 'A Team', subtitle: 'Player' },
   { icon: ThumbsUp, title: 'Willing to', subtitle: 'Work Hard' },
@@ -120,14 +120,15 @@ export const Hero = () => {
       </div>
 
       {/* Scroll indicator */}
-      <motion.div
+      <motion.a
+        href="#portfolio"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 cursor-pointer hover:text-primary transition-colors"
       >
-        <ChevronDown className="w-6 h-6 text-muted-foreground animate-bounce" />
-      </motion.div>
+        <ChevronDown className="w-6 h-6 text-muted-foreground animate-bounce hover:text-primary" />
+      </motion.a>
     </section>
   );
 };

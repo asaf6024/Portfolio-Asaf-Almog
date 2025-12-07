@@ -12,7 +12,7 @@ export const experiences: Experience[] = [
     title: 'Front End Developer',
     company: 'Mobitti',
     companyUrl: 'https://www.mobitti.com/',
-    period: '2021-2022',
+    period: '2021-Present',
     description: 'Develop Websites using modern front-end technologies',
     technologies: ['React JS', 'Redux', 'Vue.js', 'JavaScript', 'CSS', 'Sass', 'Bootstrap'],
   },
