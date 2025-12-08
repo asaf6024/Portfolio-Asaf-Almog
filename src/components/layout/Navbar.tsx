@@ -1,33 +1,33 @@
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Phone, Mail, Github } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import asafPhoto from '@/assets/asaf-photo.png';
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X, Phone, Mail, Github } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import navLogo from "@/assets/navLogo.png";
 
 const navItems = [
-  { label: 'About Me', href: '#about' },
-  { label: 'Portfolio', href: '#portfolio' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Experience', href: '#experience' },
+  { label: "About Me", href: "#about" },
+  { label: "Portfolio", href: "#portfolio" },
+  { label: "Skills", href: "#skills" },
+  { label: "Experience", href: "#experience" },
 ];
 
 const socialLinks = [
-  { icon: Phone, href: 'tel:+972544611160', label: 'Phone' },
-  { icon: Mail, href: 'mailto:asaf6024@gmail.com', label: 'Email' },
-  { icon: Github, href: 'https://github.com/asaf6024', label: 'GitHub' },
+  { icon: Phone, href: "tel:+972544611160", label: "Phone" },
+  { icon: Mail, href: "mailto:asaf6024@gmail.com", label: "Email" },
+  { icon: Github, href: "https://github.com/asaf6024", label: "GitHub" },
 ];
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('#about');
+  const [activeSection, setActiveSection] = useState("#about");
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 40);
-      
+
       // Determine active section
-      const sections = navItems.map(item => item.href.substring(1));
+      const sections = navItems.map((item) => item.href.substring(1));
       for (const section of sections.reverse()) {
         const element = document.getElementById(section);
         if (element && window.scrollY >= element.offsetTop - 150) {
@@ -36,37 +36,45 @@ export const Navbar = () => {
         }
       }
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.5, ease: 'easeOut' }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'glass shadow-card py-3' : 'bg-transparent py-5'
-      }`}
+        isScrolled ? "glass shadow-card" : "bg-transparent"
+      } h-20 md:h-24`}
     >
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between">
+      <div className="container mx-auto h-full flex items-center py-0">
+        <div className="flex items-center justify-between w-full">
           {/* Logo */}
           <a href="#about" className="flex items-center gap-3 group">
-            <img 
-              src={asafPhoto} 
-              alt="Asaf Almog" 
-              className="w-10 h-10 rounded-lg object-cover border border-primary/30 group-hover:border-primary transition-all duration-300"
+            <img
+              src={navLogo}
+              alt="AA"
+              className="h-12 sm:h-10 md:h-15 w-auto group-hover:border-primary transition-all duration-300"
             />
-            <span className="font-display font-semibold text-foreground hidden sm:block">
+            {/* <span className="font-display font-semibold text-foreground hidden sm:block">
               Asaf Almog
-            </span>
+            </span> */}
           </a>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-1">
             {navItems.map((item) => (
-              <Button key={item.href} variant="nav" size="sm" asChild className={activeSection === item.href ? 'font-bold text-primary' : ''}>
+              <Button
+                key={item.href}
+                variant="nav"
+                size="sm"
+                asChild
+                className={
+                  activeSection === item.href ? "font-bold text-primary" : ""
+                }
+              >
                 <a href={item.href}>{item.label}</a>
               </Button>
             ))}
@@ -82,7 +90,12 @@ export const Navbar = () => {
                 asChild
                 className="text-muted-foreground hover:text-primary"
               >
-                <a href={link.href} target="_blank" rel="noopener noreferrer" aria-label={link.label}>
+                <a
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={link.label}
+                >
                   <link.icon className="w-5 h-5" />
                 </a>
               </Button>
@@ -106,7 +119,7 @@ export const Navbar = () => {
         {isMobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
+            animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden glass border-t border-border mt-3"
           >
@@ -125,7 +138,12 @@ export const Navbar = () => {
               <div className="flex items-center gap-2 pt-4 border-t border-border mt-2">
                 {socialLinks.map((link) => (
                   <Button key={link.label} variant="ghost" size="icon" asChild>
-                    <a href={link.href} target="_blank" rel="noopener noreferrer" aria-label={link.label}>
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={link.label}
+                    >
                       <link.icon className="w-5 h-5" />
                     </a>
                   </Button>
