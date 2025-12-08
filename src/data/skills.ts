@@ -36,13 +36,13 @@ export const skills: Skill[] = [
   { name: 'Vite', icon: 'https://vitejs.dev/logo.svg', category: 'tools' },
   
   // AI Tools
-  { name: 'Cursor', icon: 'https://cursor.sh/brand/icon.svg', category: 'ai' },
-  { name: 'Claude', icon: 'https://upload.wikimedia.org/wikipedia/commons/1/17/Claude_AI_logo.svg', category: 'ai' },
+  { name: 'Cursor', icon: 'https://www.cursor.com/assets/images/logo.svg', category: 'ai' },
+  { name: 'Claude', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/anthropic/anthropic-original.svg', category: 'ai' },
   { name: 'Lovable', icon: 'https://lovable.dev/icon.svg', category: 'ai' },
   { name: 'GitHub Copilot', icon: 'https://github.githubassets.com/images/modules/site/copilot/copilot.png', category: 'ai' },
   { name: 'ChatGPT', icon: 'https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg', category: 'ai' },
   { name: 'Google Gemini', icon: 'https://upload.wikimedia.org/wikipedia/commons/8/8a/Google_Gemini_logo.svg', category: 'ai' },
-  { name: 'Copilot', icon: 'https://upload.wikimedia.org/wikipedia/commons/2/2a/Microsoft_365_Copilot_Icon.svg', category: 'ai' },
+  { name: 'Copilot', icon: 'https://img.icons8.com/fluency/48/microsoft-copilot.png', category: 'ai' },
   
   // Databases
   { name: 'MongoDB', icon: 'https://my-portfolio-asaf.netlify.app/img/logos/mongodb.png', category: 'os' },
