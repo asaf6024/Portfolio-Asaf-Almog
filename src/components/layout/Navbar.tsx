@@ -47,9 +47,9 @@ export const Navbar = () => {
       transition={{ duration: 0.5, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled ? "glass shadow-card" : "bg-transparent"
-      } h-20 md:h-24`}
+      } h-16 md:h-24`}
     >
-      <div className="container mx-auto h-full flex items-center py-0">
+      <div className="container mx-auto h-full flex items-center px-4">
         <div className="flex items-center justify-between w-full">
           {/* Logo */}
           <a href="#about" className="flex items-center gap-3 group">
