@@ -49,19 +49,21 @@ export const Experience = () => {
                 />
 
                 <div
-                  className={`card-gradient border border-border rounded-xl p-6 ${
+                  className={`card-gradient border border-border rounded-xl p-6 text-left ${
                     index % 2 === 0 ? "md:mr-8" : "md:ml-8"
                   }`}
                 >
-                  <span className="inline-block text-sm font-display text-primary mb-2">
+                  <span className={`inline-block text-sm font-display text-primary mb-2 ${
+                    index % 2 === 0 ? "md:float-right md:ml-4" : ""
+                  }`}>
                     {exp.period}
                   </span>
 
-                  <h3 className="text-xl font-bold font-display text-foreground mb-1 fib">
+                  <h3 className="text-xl font-bold font-display text-foreground mb-1">
                     {exp.title}
                   </h3>
 
-                  <div className="flex items-center gap-2 mb-3 justify-start md:justify-inherit">
+                  <div className="flex items-center gap-2 mb-3">
                     {exp.companyUrl ? (
                       <a
                         href={exp.companyUrl}
@@ -83,11 +85,7 @@ export const Experience = () => {
                     {exp.description}
                   </p>
 
-                  <div
-                    className={`flex flex-wrap gap-1.5 ${
-                      index % 2 === 0 ? "md:justify-end" : "md:justify-start"
-                    }`}
-                  >
+                  <div className="flex flex-wrap gap-1.5">
                     {exp.technologies.map((tech) => (
                       <span
                         key={tech}

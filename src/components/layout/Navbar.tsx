@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Phone, Mail, Github } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import asafPhoto from '@/assets/asaf-photo.png';
 
 const navItems = [
   { label: 'About Me', href: '#about' },
@@ -19,10 +20,21 @@ const socialLinks = [
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('#about');
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 40);
+      
+      // Determine active section
+      const sections = navItems.map(item => item.href.substring(1));
+      for (const section of sections.reverse()) {
+        const element = document.getElementById(section);
+        if (element && window.scrollY >= element.offsetTop - 150) {
+          setActiveSection(`#${section}`);
+          break;
+        }
+      }
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -41,9 +53,11 @@ export const Navbar = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a href="#about" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center font-display font-bold text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
-              AA
-            </div>
+            <img 
+              src={asafPhoto} 
+              alt="Asaf Almog" 
+              className="w-10 h-10 rounded-lg object-cover border border-primary/30 group-hover:border-primary transition-all duration-300"
+            />
             <span className="font-display font-semibold text-foreground hidden sm:block">
               Asaf Almog
             </span>
@@ -52,7 +66,7 @@ export const Navbar = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-1">
             {navItems.map((item) => (
-              <Button key={item.href} variant="nav" size="sm" asChild>
+              <Button key={item.href} variant="nav" size="sm" asChild className={activeSection === item.href ? 'font-bold text-primary' : ''}>
                 <a href={item.href}>{item.label}</a>
               </Button>
             ))}
