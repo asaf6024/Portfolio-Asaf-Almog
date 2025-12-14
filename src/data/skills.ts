@@ -95,9 +95,9 @@ export const skills: Skill[] = [
     category: "web",
   },
 
-  {
+{
     name: "GitHub",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+    icon: "https://skillicons.dev/icons?i=github&theme=dark",
     category: "web",
   },
   {
