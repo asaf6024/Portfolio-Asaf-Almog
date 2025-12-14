@@ -1,3 +1,5 @@
+import claudeCodeIcon from "@/assets/claude-code.svg";
+
 export interface Skill {
   name: string;
   icon: string;
@@ -37,7 +39,7 @@ export const skills: Skill[] = [
   },
 {
     name: "Claude Code",
-    icon: "https://www.anthropic.com/images/icons/safari-pinned-tab.svg",
+    icon: claudeCodeIcon,
     category: "web",
   },
   {
