@@ -1,4 +1,8 @@
-import claudeCodeIcon from "@/assets/claude-code.svg";
+import claudeCodeIcon from "@/assets/claude.png";
+import nextJSIcon from "@/assets/next_JS.png";
+import TypeScriptIcon from "@/assets/typeScript.png";
+import yarnIcon from "@/assets/yarn.svg";
+import mongodbIcon from "@/assets/mongodb.svg";
 
 export interface Skill {
   name: string;
@@ -21,9 +25,14 @@ export const skills: Skill[] = [
     icon: "https://my-portfolio-asaf.netlify.app/img/logos/react.png",
     category: "web",
   },
-{
+  {
     name: "Vue.js",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg",
+    category: "web",
+  },
+  {
+    name: "TypeScript ",
+    icon: TypeScriptIcon,
     category: "web",
   },
   {
@@ -32,12 +41,13 @@ export const skills: Skill[] = [
     category: "web",
   },
   { name: "Vite", icon: "https://vitejs.dev/logo.svg", category: "web" },
+  { name: "Next.js", icon: nextJSIcon, category: "web" },
   {
     name: "Git",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
     category: "web",
   },
-{
+  {
     name: "Claude Code",
     icon: claudeCodeIcon,
     category: "web",
@@ -53,15 +63,14 @@ export const skills: Skill[] = [
     category: "web",
   },
   { name: "Lovable", icon: "https://lovable.dev/icon.svg", category: "web" },
-
-  {
-    name: "ChatGPT",
-    icon: "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg",
-    category: "web",
-  },
   {
     name: "Google Gemini",
     icon: "https://upload.wikimedia.org/wikipedia/commons/8/8a/Google_Gemini_logo.svg",
+    category: "web",
+  },
+  {
+    name: "ChatGPT",
+    icon: "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg",
     category: "web",
   },
   {
@@ -89,13 +98,12 @@ export const skills: Skill[] = [
     icon: "https://my-portfolio-asaf.netlify.app/img/logos/sass.png",
     category: "web",
   },
+  // {
+  //   name: "React Hooks",
+  //   icon: "https://my-portfolio-asaf.netlify.app/img/logos/hooks.png",
+  //   category: "web",
+  // },
   {
-    name: "React Hooks",
-    icon: "https://my-portfolio-asaf.netlify.app/img/logos/hooks.png",
-    category: "web",
-  },
-
-{
     name: "GitHub",
     icon: "https://skillicons.dev/icons?i=github&theme=dark",
     category: "web",
@@ -107,12 +115,12 @@ export const skills: Skill[] = [
   },
   {
     name: "yarn",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg",
+    icon: yarnIcon,
     category: "web",
   },
   {
     name: "MongoDB",
-    icon: "https://my-portfolio-asaf.netlify.app/img/logos/mongodb.png",
+    icon: mongodbIcon,
     category: "web",
   },
   {
