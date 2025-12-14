@@ -21,9 +21,9 @@ export const skills: Skill[] = [
     icon: "https://my-portfolio-asaf.netlify.app/img/logos/react.png",
     category: "web",
   },
-  {
+{
     name: "Vue.js",
-    icon: "https://my-portfolio-asaf.netlify.app/img/logos/vue.png",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg",
     category: "web",
   },
   {
