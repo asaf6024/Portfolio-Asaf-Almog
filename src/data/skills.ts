@@ -35,9 +35,9 @@ export const skills: Skill[] = [
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
     category: "web",
   },
-  {
+{
     name: "Claude Code",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/anthropic/anthropic-original.svg",
+    icon: "https://www.anthropic.com/images/icons/safari-pinned-tab.svg",
     category: "web",
   },
   {

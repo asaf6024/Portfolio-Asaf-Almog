@@ -73,7 +73,7 @@ export const Skills = () => {
                       <img
                         src={skill.icon}
                         alt={skill.name}
-                        className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-300"
+                        className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-300 brightness-0 invert"
                       />
                     </div>
                     <p className="text-xs font-display text-muted-foreground group-hover:text-foreground transition-colors">
