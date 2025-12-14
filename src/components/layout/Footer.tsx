@@ -1,10 +1,11 @@
-import { Phone, Mail, Github, Heart } from "lucide-react";
+import { Phone, Mail, Github, Heart, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const socialLinks = [
   { icon: Phone, href: "tel:+972502820405", label: "Phone" },
   { icon: Mail, href: "mailto:asafalmog119@gmail.com", label: "Email" },
   { icon: Github, href: "https://github.com/asaf6024", label: "GitHub" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/asaf-almog-b94904117/", label: "LinkedIn" },
 ];
 
 export const Footer = () => {

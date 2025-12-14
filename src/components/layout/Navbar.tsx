@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Phone, Mail, Github } from "lucide-react";
+import { Menu, X, Phone, Mail, Github, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import navLogo from "@/assets/navLogo.png";
 
@@ -15,6 +15,7 @@ const socialLinks = [
   { icon: Phone, href: "tel:+972502820405", label: "Phone" },
   { icon: Mail, href: "mailto:asafalmog119@gmail.com", label: "Email" },
   { icon: Github, href: "https://github.com/asaf6024", label: "GitHub" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/asaf-almog-b94904117/", label: "LinkedIn" },
 ];
 
 export const Navbar = () => {

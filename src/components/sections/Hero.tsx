@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ChevronDown, Briefcase, BookOpen, Users, ThumbsUp } from 'lucide-react';
+import { ChevronDown, Briefcase, BookOpen, Users, ThumbsUp, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import asafPhoto from '@/assets/asaf-photo.png';
 
@@ -7,7 +7,7 @@ const highlights = [
   { icon: Briefcase, title: '4 Years of', subtitle: 'Experience' },
   { icon: BookOpen, title: 'Great', subtitle: 'Self-Learning' },
   { icon: Users, title: 'A Team', subtitle: 'Player' },
-  { icon: ThumbsUp, title: 'Willing to', subtitle: 'Work Hard' },
+  { icon: Sparkles, title: 'AI-Powered', subtitle: 'Development' },
 ];
 
 export const Hero = () => {
@@ -53,10 +53,20 @@ export const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.6 }}
-              className="text-muted-foreground text-lg mb-8 max-w-lg mx-auto lg:mx-0"
+              className="text-muted-foreground text-lg mb-4 max-w-lg mx-auto lg:mx-0"
             >
               Well-versed in numerous programming languages including{' '}
-              <span className="text-foreground italic">React JS, Vue.js, JavaScript, CSS</span> and more..
+              <span className="text-foreground italic">React JS, Vue.js, JavaScript, CSS</span> and more.
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.65 }}
+              className="text-muted-foreground text-lg mb-8 max-w-lg mx-auto lg:mx-0"
+            >
+              Proficient in leveraging <span className="text-primary font-medium">AI-assisted development tools</span> to 
+              accelerate workflows, enhance code quality, and deliver innovative solutions efficiently.
             </motion.p>
 
             {/* Highlights */}
