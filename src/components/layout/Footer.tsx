@@ -1,10 +1,10 @@
-import { Phone, Mail, Github, Heart } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Phone, Mail, Github, Heart } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const socialLinks = [
-  { icon: Phone, href: 'tel:+972502820405', label: 'Phone' },
-  { icon: Mail, href: 'mailto:asafalmog119@gmail.com', label: 'Email' },
-  { icon: Github, href: 'https://github.com/asaf6024', label: 'GitHub' },
+  { icon: Phone, href: "tel:+972502820405", label: "Phone" },
+  { icon: Mail, href: "mailto:asafalmog119@gmail.com", label: "Email" },
+  { icon: Github, href: "https://github.com/asaf6024", label: "GitHub" },
 ];
 
 export const Footer = () => {
@@ -32,7 +32,12 @@ export const Footer = () => {
                 asChild
                 className="text-muted-foreground hover:text-primary hover:border-primary"
               >
-                <a href={link.href} target="_blank" rel="noopener noreferrer" aria-label={link.label}>
+                <a
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={link.label}
+                >
                   <link.icon className="w-5 h-5" />
                 </a>
               </Button>
@@ -41,7 +46,9 @@ export const Footer = () => {
 
           {/* Copyright */}
           <p className="text-sm text-muted-foreground flex items-center gap-1">
-            Made with <Heart className="w-4 h-4 text-destructive fill-destructive" /> by Asaf Almog
+            Made with{" "}
+            <Heart className="w-4 h-4 text-destructive fill-destructive" /> by
+            Asaf Almog
           </p>
           <p className="text-xs text-muted-foreground/60">
             © {new Date().getFullYear()} All rights reserved.

@@ -12,8 +12,8 @@ const navItems = [
 ];
 
 const socialLinks = [
-  { icon: Phone, href: "tel:+972544611160", label: "Phone" },
-  { icon: Mail, href: "mailto:asaf6024@gmail.com", label: "Email" },
+  { icon: Phone, href: "tel:+972502820405", label: "Phone" },
+  { icon: Mail, href: "mailto:asafalmog119@gmail.com", label: "Email" },
   { icon: Github, href: "https://github.com/asaf6024", label: "GitHub" },
 ];
 

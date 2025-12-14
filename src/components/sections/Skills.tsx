@@ -1,12 +1,14 @@
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { skills, skillCategories } from '@/data/skills';
-import { Button } from '@/components/ui/button';
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { skills, skillCategories } from "@/data/skills";
+import { Button } from "@/components/ui/button";
 
 export const Skills = () => {
-  const [activeCategory, setActiveCategory] = useState<string>('web');
+  const [activeCategory, setActiveCategory] = useState<string>("web");
 
-  const filteredSkills = skills.filter((skill) => skill.category === activeCategory);
+  const filteredSkills = skills.filter(
+    (skill) => skill.category === activeCategory
+  );
 
   return (
     <section id="skills" className="py-24 bg-secondary/20">
@@ -27,7 +29,7 @@ export const Skills = () => {
         </motion.div>
 
         {/* Category Tabs */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -45,7 +47,7 @@ export const Skills = () => {
               {category.label}
             </Button>
           ))}
-        </motion.div>
+        </motion.div> */}
 
         {/* Skills Grid */}
         <div className="max-w-4xl mx-auto">
