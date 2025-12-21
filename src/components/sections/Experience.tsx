@@ -21,7 +21,7 @@ export const Experience = () => {
           </p>
         </motion.div>
 
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-3xl mx-auto">
           <div className="relative">
             {/* Timeline line */}
             <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-1/2" />
@@ -53,9 +53,11 @@ export const Experience = () => {
                     index % 2 === 0 ? "md:mr-8" : "md:ml-8"
                   }`}
                 >
-                  <span className={`inline-block text-sm font-display text-primary mb-2 ${
-                    index % 2 === 0 ? "md:float-right md:ml-4" : ""
-                  }`}>
+                  <span
+                    className={`inline-block text-sm font-display text-primary mb-2 ${
+                      index % 2 === 0 ? "md:float-right md:ml-4" : ""
+                    }`}
+                  >
                     {exp.period}
                   </span>
 

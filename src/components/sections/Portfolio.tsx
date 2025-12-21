@@ -1,48 +1,104 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink, Github, Play } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
 import { projects, type Project } from '@/data/projects';
 
 const ProjectCard = ({ project, index }: { project: Project; index: number }) => {
+  const [isHovered, setIsHovered] = useState(false);
+  const [showDemoDialog, setShowDemoDialog] = useState(false);
+  const hasHoverMedia = !!(project.gif || project.video);
+
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-50px' }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group relative"
-    >
-      <div className="relative overflow-hidden rounded-xl card-gradient border border-border shadow-card hover:shadow-card-hover transition-all duration-500">
-        {/* Image */}
-        <div className="relative aspect-video overflow-hidden">
-          <img
-            src={project.image}
-            alt={project.title}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300" />
-          
-          {/* Overlay buttons */}
-          <div className="absolute inset-0 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-all duration-300">
-            {project.liveUrl && (
-              <Button variant="glass" size="sm" asChild>
-                <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                  <ExternalLink className="w-4 h-4" />
-                  Open
-                </a>
-              </Button>
+    <>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-50px' }}
+        transition={{ duration: 0.5, delay: index * 0.1 }}
+        className="group relative"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        <div className="relative overflow-hidden rounded-xl card-gradient border border-border shadow-card hover:shadow-card-hover transition-all duration-500">
+          {/* Image/GIF/Video */}
+          <div className="relative aspect-video overflow-hidden">
+            {/* Static Image - always rendered */}
+            <img
+              src={project.image}
+              alt={project.title}
+              className={`w-full h-full object-cover transition-all duration-500 ${
+                isHovered && hasHoverMedia
+                  ? 'opacity-0 scale-110'
+                  : 'opacity-100 group-hover:scale-110'
+              }`}
+            />
+
+            {/* Video - fades in on hover */}
+            {hasHoverMedia && project.video && (
+              <video
+                src={project.video}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
+                  isHovered ? 'opacity-100' : 'opacity-0'
+                }`}
+              />
             )}
-            {project.sourceUrl && (
-              <Button variant="glass" size="sm" asChild>
-                <a href={project.sourceUrl} target="_blank" rel="noopener noreferrer">
-                  <Github className="w-4 h-4" />
-                  Code
-                </a>
-              </Button>
+
+            {/* GIF - fades in on hover (if no video) */}
+            {hasHoverMedia && project.gif && !project.video && (
+              <img
+                src={project.gif}
+                alt={`${project.title} demo`}
+                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
+                  isHovered ? 'opacity-100' : 'opacity-0'
+                }`}
+              />
             )}
+
+            <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300" />
+
+            {/* Overlay buttons */}
+            <div className="absolute inset-0 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-all duration-300">
+              {hasHoverMedia && (
+                <Button
+                  variant="glass"
+                  size="sm"
+                  onClick={() => setShowDemoDialog(true)}
+                >
+                  <Play className="w-4 h-4" />
+                  Watch Demo
+                </Button>
+              )}
+              {project.liveUrl && (
+                <Button variant="glass" size="sm" asChild>
+                  <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                    <ExternalLink className="w-4 h-4" />
+                    Open
+                  </a>
+                </Button>
+              )}
+              {project.sourceUrl && (
+                <Button variant="glass" size="sm" asChild>
+                  <a href={project.sourceUrl} target="_blank" rel="noopener noreferrer">
+                    <Github className="w-4 h-4" />
+                    Code
+                  </a>
+                </Button>
+              )}
+            </div>
           </div>
-        </div>
 
         {/* Content */}
         <div className="p-5">
@@ -77,6 +133,36 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
         </div>
       </div>
     </motion.div>
+
+    {/* Demo Dialog */}
+    <Dialog open={showDemoDialog} onOpenChange={setShowDemoDialog}>
+      <DialogContent className="max-w-4xl">
+        <DialogHeader>
+          <DialogTitle>{project.title} - Demo</DialogTitle>
+          <DialogDescription>
+            Watch the UI flow demonstration
+          </DialogDescription>
+        </DialogHeader>
+        <div className="aspect-video w-full rounded-lg overflow-hidden bg-secondary/20">
+          {project.video ? (
+            <video
+              src={project.video}
+              controls
+              autoPlay
+              loop
+              className="w-full h-full object-contain"
+            />
+          ) : project.gif ? (
+            <img
+              src={project.gif}
+              alt={`${project.title} demo`}
+              className="w-full h-full object-contain"
+            />
+          ) : null}
+        </div>
+      </DialogContent>
+    </Dialog>
+  </>
   );
 };
 
