@@ -15,6 +15,7 @@ import { projects, type Project } from '@/data/projects';
 const ProjectCard = ({ project, index }: { project: Project; index: number }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [showDemoDialog, setShowDemoDialog] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
   const hasHoverMedia = !!(project.gif || project.video);
 
   return (
@@ -116,7 +117,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
           </p>
 
           <div className="flex flex-wrap gap-1.5">
-            {project.technologies.slice(0, 4).map((tech) => (
+            {(isExpanded ? project.technologies : project.technologies.slice(0, 4)).map((tech) => (
               <span
                 key={tech}
                 className="text-xs px-2 py-1 rounded-md bg-secondary/50 text-muted-foreground font-display"
@@ -125,9 +126,12 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
               </span>
             ))}
             {project.technologies.length > 4 && (
-              <span className="text-xs px-2 py-1 rounded-md bg-secondary/50 text-muted-foreground font-display">
-                +{project.technologies.length - 4}
-              </span>
+              <button
+                onClick={() => setIsExpanded(!isExpanded)}
+                className="text-xs px-2 py-1 rounded-md bg-secondary/50 text-muted-foreground font-display hover:bg-secondary hover:text-foreground transition-colors cursor-pointer"
+              >
+                {isExpanded ? 'Show Less' : `+${project.technologies.length - 4}`}
+              </button>
             )}
           </div>
         </div>

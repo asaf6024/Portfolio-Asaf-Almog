@@ -1,5 +1,5 @@
 import esimImage from "../assets/esim.png";
-import evenetsImage from "../assets/events.png";
+import eventsImage from "../assets/events.png";
 import adminImage from "../assets/mobitti-admin.png";
 import esimVideo from "../assets/videos/esim.mp4";
 import meshekAlmogVideo from "../assets/videos/meshek-almog.mp4";
@@ -24,7 +24,14 @@ export const projects: Project[] = [
     description: "Family farm website with registration order management",
     image: "https://my-portfolio-asaf.netlify.app/img/websites/almog.jpg",
     liveUrl: "https://meshekalmog.co.il/",
-    technologies: ["React JS", "Redux", "MongoDB", "Node.js", "Express.js"],
+    technologies: [
+      "React JS",
+      "Redux Thunk",
+      "Bootstrap",
+      "MongoDB",
+      "Node.js",
+      "Express.js",
+    ],
     period: "2020-Present",
     type: "personal",
     video: meshekAlmogVideo,
@@ -54,14 +61,23 @@ export const projects: Project[] = [
     description: "Admin dashboard for managing Application data and users",
     image: adminImage,
     liveUrl: adminImage,
-    technologies: ["React JS", "Tailwind", "Axios"],
+    technologies: [
+      "React JS",
+      "Redux Saga",
+      "Axios",
+      "Bootstrap",
+      "Google APIs",
+      "msal",
+      "loadash",
+      "sass",
+    ],
     period: "2022-Present",
     type: "professional",
   },
   {
-    title: "Evenets",
+    title: "Events Platform",
     description: "Platform for managing event registrations and ticket sales",
-    image: evenetsImage,
+    image: eventsImage,
     liveUrl:
       "https://test.mobitti.com/web_client/mobile-app/event-web.html?ecode=97104069-1cdc-48a8-ac39-46245b058e14",
     technologies: ["HTML", "Vue JS", "Bootstrap", "AJAX"],
