@@ -74,16 +74,16 @@ export const projects: Project[] = [
     period: "2022-Present",
     type: "professional",
   },
-  {
-    title: "Events Platform",
-    description: "Platform for managing event registrations and ticket sales",
-    image: eventsImage,
-    liveUrl:
-      "https://test.mobitti.com/web_client/mobile-app/event-web.html?ecode=97104069-1cdc-48a8-ac39-46245b058e14",
-    technologies: ["HTML", "Vue JS", "Bootstrap", "AJAX"],
-    period: "2023-Present",
-    type: "professional",
-  },
+  // {
+  //   title: "Events Platform",
+  //   description: "Platform for managing event registrations and ticket sales",
+  //   image: eventsImage,
+  //   liveUrl:
+  //     "https://test.mobitti.com/web_client/mobile-app/event-web.html?ecode=97104069-1cdc-48a8-ac39-46245b058e14",
+  //   technologies: ["HTML", "Vue JS", "Bootstrap", "AJAX"],
+  //   period: "2023-Present",
+  //   type: "professional",
+  // },
   {
     title: "Weather Forecast",
     description: "Weather application with real-time forecasts",
