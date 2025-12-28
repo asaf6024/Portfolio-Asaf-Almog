@@ -119,7 +119,8 @@ export const Hero = () => {
               <motion.img
                 src={asafPhoto}
                 alt="Asaf Almog - Front End Developer"
-                className="relative z-10 max-h-[500px] object-contain animate-float"
+                className="relative z-10 max-h-[500px] w-auto object-contain animate-float"
+                style={{ imageRendering: 'auto', WebkitBackfaceVisibility: 'hidden' }}
                 initial={{ y: 20 }}
                 animate={{ y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
