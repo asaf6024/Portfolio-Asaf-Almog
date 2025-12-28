@@ -60,7 +60,8 @@ export const projects: Project[] = [
     title: "Admin Dashboard",
     description: "Admin dashboard for managing Application data and users",
     image: adminImage,
-    liveUrl: adminImage,
+    // liveUrl: adminImage,
+    // video: adminImage,
     technologies: [
       "React JS",
       "Redux Saga",
@@ -88,7 +89,7 @@ export const projects: Project[] = [
     title: "Weather Forecast",
     description: "Weather application with real-time forecasts",
     image: "https://my-portfolio-asaf.netlify.app/img/websites/weather.jpg",
-    liveUrl: "https://weather-forecast-asaf.netlify.app/",
+    // liveUrl: "https://weather-forecast-asaf.netlify.app/",
     sourceUrl: "https://github.com/asaf6024/Weather-Forecast",
     technologies: ["React JS", "Redux", "Bootstrap", "AccuWeather API"],
     period: "2021",
@@ -159,17 +160,17 @@ export const projects: Project[] = [
     type: "personal",
     gif: "https://user-images.githubusercontent.com/33829557/142764641-cad3c999-1fa3-4581-91e6-93b91276f01b.gif",
   },
-  {
-    title: "Styled-Components",
-    description: "Demon of styled-components library implementation",
-    image:
-      "https://my-portfolio-asaf.netlify.app/img/websites/styled-components.JPG",
-    liveUrl: "https://styled-component-asaf.netlify.app/",
-    sourceUrl: "https://github.com/asaf6024/styled-components",
-    technologies: ["styled-components", "React JS"],
-    period: "2021",
-    type: "personal",
-  },
+  // {
+  //   title: "Styled-Components",
+  //   description: "Demon of styled-components library implementation",
+  //   image:
+  //     "https://my-portfolio-asaf.netlify.app/img/websites/styled-components.JPG",
+  //   liveUrl: "https://styled-component-asaf.netlify.app/",
+  //   sourceUrl: "https://github.com/asaf6024/styled-components",
+  //   technologies: ["styled-components", "React JS"],
+  //   period: "2021",
+  //   type: "personal",
+  // },
   // {
   //   title: "Sass Website",
   //   description: "Website built with Sass",
